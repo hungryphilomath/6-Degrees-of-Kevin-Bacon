@@ -1,15 +1,13 @@
-/*
-	Theme Name:
-	Author: Ahmed Abuelgasim
-	Author URI: ahmeda.ga
-	Description:  */
-
 /////////////
 //VARIABLES//
 /////////////
 //Color palette
-
-//Fonts
+$base: #24344b
+$dark: #0d1526
+$light: #1e90ff
+$accent: #f03c4d
+$black: #020911
+$grey: rgba(106,114,124,.4)
 
 //////////////////////
 //MIXINS AND EXTENDS//
@@ -19,211 +17,50 @@
 	display: block
 	clear: both
 
-=transformScale($scale)
-	-webkit-transform: scale($scale)
-	-moz-transform: scale($scale)
-	-ms-transform: scale($scale)
-	-o-transform: scale($scale)
-	transform: scale($scale)
-
-=transformRotate($angle)
-	-webkit-transform: rotate($angle)
-	-moz-transform: rotate($angle)
-	-o-transform: rotate($angle)
-	transform: rotate($angle)
-
-// =transition($time,$type)
-	// -webkit-transition: $time $type
-	// -moz-transition: $time $type
-	// -o-transition: $time $type
-	// transition: $time $type
-
-// =inputplaceholder
-	// &::-webkit-input-placeholder
-	// 	@content
-	// &:-moz-placeholder
-	// 	@content
-	// &::-moz-placeholder
-	// 	@content
-	// &:-ms-input-placeholder
-	// 	@content
-
-// =transformscale($scale)
-	// -webkit-transform: scale($scale)
-	// -moz-transform: scale($scale)
-	// -ms-transform: scale($scale)
-	// -o-transform: scale($scale)
-	// transform: scale($scale)
-
-// =gradient($color1, $color2)
-	// background: -webkit-linear-gradient(to right, $color1, $color2)
-	// background: linear-gradient(to right, $color1, $color2)
-
-// =backgroundcover($img)
-	// background-size: cover
-	// background-position: center center
-	// background-repeat: no-repeat
-
 //////////////////////////
 //STANDARD HTML ELEMENTS//
 //////////////////////////
 html
 	height: 100%
 	font-size: 10px
-
 body
-	background: pink //
-	//position: relative /*Needed for scrollspy*/
 	height: 100%
-	//font-family:
-	//font-size:
-	//color:
-
+	font-family: 'Lato'
+	font-size: 1.6rem
+	background: $base
 ul
+	padding: 0
+	margin: 0
+	font-size: 0
 	list-style-type: none
-a,a:hover,a:active,a:focus
-	color: inherit
-	text-decoration: none
+	li
+		display: inline-block
 h1,
 h2,
 h3,
-h4,
-h5
-	margin: 30px 0
+	margin: 0
 	padding: 0
 	font-weight: 700
-p
-	margin-bottom: 15px
-	a
-		font-weight: 700
-		&:hover
-			text-decoration: underline
-// input,textarea
-	// width: 100%
-	// height: 43px
-	// margin: 10px 0
-	// box-shadow: none
-	// outline: medium none
-	// border: 2px solid #777
-	// border-radius: 0
-	// background-color: transparent
-	// padding: 10px
-	// color: #999999
+	color: $dark
+h1
+	font-size: 3rem
+h2
+	font-size: 2.6rem
+h3
+	font-size: 1.8rem
 
 
-//////////////
-//COMPONENTS//
-//////////////
-%clearfix:after
-	content: " "
-	display: block
-	clear: both
-
-section
-	padding: 50px 0
-
-.navBurger
-	position: fixed
-	top: 3px
-	right: 5px
-	opacity: 1
-	z-index: 20
-	width: 60px
-	height: 45px
-	cursor: pointer
-	transition: all .5s ease-in-out
-	+transformRotate(0)
-	+transformScale(.5)
-	span
-		position: absolute
-		left: 0
-		width: 100%
-		height: 4px
-		border-radius: 9px
-		background-color: red
-		transition: all .25s ease-in-out
-		+transformRotate(0)
-		&:nth-child(1)
-			top: 0px
-		&:nth-child(2),&:nth-child(3)
-			top: 18px
-		&:nth-child(4)
-			top: 36px
-	&.open
-		opacity: 1
-		span:nth-child(1)
-			top: 18px
-			left: 50%
-			width: 0%
-		span:nth-child(2)
-			+transformRotate(45deg)
-		span:nth-child(3)
-			+transformRotate(-45deg)
-		span:nth-child(4)
-			top: 18px
-			left: 50%
-			width: 0%
-	@media (min-width: 768px)
-		display: none
-
-.myNavbar
-	display: none
-	position: fixed
-	right: 0
-	z-index: 15
-	width: 175px
-	height: 100%
-	background: purple
-	ul
-		float: right
-		width: 100%
-		margin-top: 40px
-		padding: 10px 25px
-		text-align: center
-		background: inherit
-		list-style-type: none
-		li
-			display: block
-			margin-top: 15px
-			font-size: 2rem
-			a
-				display: block
-				padding: 10px 0
-				&:focus,
-				&:hover
-					background: transparent
-			.line
-				width: 0
-				height: 3px
-				background: yellow
-				transition: width .2s ease
-			&.active,
-			&:hover
-				.line
-					width: 100%
-	@media (min-width: 768px)
-		display: block
-		width: 100%
-		height: 70px
-		ul
-			width: auto
-			height: auto
-			margin-top: 0
-			padding: 0px 30px 0 0
-			li
-				display: inline-block
-				font-size: 1.4rem
-				&~li
-					margin-left: 10px
-				a
-					padding: 7px 5px
+///////////////////////
+//REPEATED COMPONENTS//
+///////////////////////
+.container
+	max-width: 700px
 
 .cta
 	display: inline-block
 	position: relative
 	z-index: 5
-	margin: 20px 0
-	background: orange
+	background: $accent
 	padding: 15px
 	text-align: center
 	font-size: 1.2rem
@@ -241,7 +78,7 @@ section
 		left: 0
 		width: 0
 		height: 100%
-		background: teal
+		background: $light
 		transition: width .2s ease
 	&:hover
 		a
@@ -250,6 +87,258 @@ section
 		&:before
 			width: 100%
 
+.card
+	position: relative
+	width: 90%
+	max-width: 400px
+	height: 120px
+	margin: 10px auto
+	padding: 10px
+	background: white
+	box-shadow: 2px 2px 3px $black
+	overflow: hidden
+	&.linked
+		background: $dark
+		color: white
+	.close
+		display: none
+		color: $accent
+		opacity: 1
+		position: absolute
+		right: 1px
+		top: 1px
+		font-size: 1.2rem
+		&:hover
+			color: $light
+	&.last
+		.close
+			display: block
+	&.actor
+		.img-div
+			float: left
+		.caption
+			float: right
+	&.movie
+		.img-div
+			float: right
+		.caption
+			float: left
+	.img-div
+		width: 25%
+		height: 100%
+		img
+			height: 100%
+			border-radius: 1px
+	.caption
+		position: relative
+		width: 74%
+		height: 100%
+		padding: 0 10px
+		line-height: 1.7
+		.name
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+	@media (min-width: 768px)
+		height: 170px
+		padding: 10px 30px
+		.close
+			right: 5px
+			top: 5px
+			font-size: 2.5rem
+		.img-div
+			width: 35%
+		.caption
+			font-size: 1.8rem
+			width: 64%
+
 ////////////
 ////CODE////
 ////////////
+
+#home
+	padding-top: 20px
+	@media (min-width: 768px)
+		padding-top: 70px
+	.wrapper
+		width: 90%
+		max-width: 600px
+		margin: 0 auto
+		padding: 20px 40px
+		background: white
+		text-align: center
+		.logo
+			width: 80px
+			margin-bottom: 20px
+		p
+			margin-top: 15px
+			text-align: justify
+			line-height: 1.2
+		h2
+			margin: 30px 0 10px
+			text-transform: uppercase
+			img
+				width: 100px
+				margin-right: 5px
+				border: 4px solid $dark
+				border-radius: 50%
+		.options
+			max-width: 250px
+			margin: 10px auto
+			border: 2px solid $grey
+			padding: 10px 20px
+			font-size: 1.5rem
+			h3
+				clear: both
+				margin: 10px 0
+				&:nth-of-type(2)
+					margin-top: 50px
+			@extend %clearfix
+			.leftSide
+				float: left
+				width: 80%
+				text-align: left
+				line-height: 2
+			.rightSide
+				float: right
+				width: 20%
+				line-height: 2
+		.cta
+			margin: 20px 0 30px
+		svg
+			width: 120px
+			fill: $accent
+			&:hover
+				fill: $light
+
+#game
+	display: none
+	text-align: center
+	.container
+		padding: 0
+	nav
+		position: fixed
+		z-index: 1000
+		top: 0
+		right: 0
+		left: 0
+		background: $dark
+		color: white
+		padding: 2px
+		border-bottom: 2px solid $accent
+		.logo
+			width: 23px
+		li
+			width: 19%
+			vertical-align: middle
+			&:nth-of-type(2)
+				width: 60%
+				font-size: 1.2rem
+			i
+				font-size: 25px
+				color: $accent
+				transition: color .2s linear
+				cursor: pointer
+				&:hover
+					color: $light
+				&~i
+					margin-left: 5px
+		@media (min-width: 768px)
+			.logo
+				width: 43px
+			li
+				&:nth-of-type(2)
+					font-size: 2rem
+				i
+					font-size: 40px
+					&~i
+						margin-left: 10px
+	#task
+		width: 90%
+		margin: 40px auto 0
+		padding: 5px
+		background: $dark
+		color: white
+		ul,
+		li
+			height: 100%
+		li
+			width: 24%
+			padding: 0
+			vertical-align: top
+			font-size: 0.8rem
+			&:nth-of-type(2)
+				width: 50%
+				padding-top: 5px
+		img
+			width: 100%
+			max-width: 120px
+			border-radius: 1px
+		p
+			margin: 0
+			line-height: 2
+			strong
+				font-size: 1.3em
+		#degs-sep
+			display: none
+		.chain
+			display: inline-block
+			position: relative
+			height: 15px
+			margin: 10px 0
+			font-size: 0
+			&.linked
+				.link
+					margin: 0
+				.mid-link
+					margin: 0
+			.link
+				display: inline-block
+				width: 25px
+				height: 100%
+				margin: 0 5px
+				border: 3px solid white
+				border-radius: 8px
+				transition: margin .5s linear
+			.mid-link
+				position: absolute
+				top: 50%
+				left: 16px
+				width: 20px
+				height: 5px
+				background: white
+				border-radius: 8px
+				transform: translateY(-50%)
+		@media (min-width: 768px)
+			padding: 10px
+			margin: 60px auto 10px
+			li
+				font-size: 1.4rem
+			.chain
+				margin: 20px 0
+	#content
+		overflow: hidden
+		i.fa-chain
+			font-size: 4rem
+			color: white
+		.dropdown,
+		.dropup
+			max-width: 600px
+			margin: 30px auto
+			button
+				background: $accent !important
+				border: none !important
+				border-radius: 0 !important
+				font-weight: bold !important
+				transition: background .2s linear
+				&:hover
+					background: $light !important
+				@media (min-width: 768px)
+					font-size: 1.6rem !important
+			.dropdown-menu
+				width: 100%
+				position: relative
+				z-index: 10000
+				li
+					display: block
