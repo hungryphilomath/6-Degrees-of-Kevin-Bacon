@@ -170,11 +170,20 @@ h3
 		text-align: center
 		.logo
 			width: 80px
-			margin-bottom: 20px
+			margin-bottom: 30px
 		p
 			margin-top: 15px
 			text-align: justify
 			line-height: 1.2
+			&:last-of-type()
+				margin-top: 30px
+				text-align: center
+				a
+					color: $accent
+					font-weight: 700
+					&:hover
+						color: $light
+						text-decoration: none
 		h2
 			margin: 30px 0 10px
 			text-transform: uppercase

@@ -169,12 +169,24 @@ h3 {
 
 #home .wrapper .logo {
   width: 80px;
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
 
 #home .wrapper p {
   margin-top: 15px;
   text-align: justify;
   line-height: 1.2; }
+
+#home .wrapper p:last-of-type {
+  margin-top: 30px;
+  text-align: center; }
+
+#home .wrapper p:last-of-type a {
+  color: #f03c4d;
+  font-weight: 700; }
+
+#home .wrapper p:last-of-type a:hover {
+  color: #1e90ff;
+  text-decoration: none; }
 
 #home .wrapper h2 {
   margin: 30px 0 10px;
